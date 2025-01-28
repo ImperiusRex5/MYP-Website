@@ -1,11 +1,1 @@
-/* Import the Arvo font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@700&display=swap');
 
-/* Apply the font to the entire website */
-* {
-    font-family: 'Arvo', serif;
-    font-weight: 700;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
