@@ -3,167 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome Toolbar</title>
-    <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@700&display=swap" rel="stylesheet">
+    <title>Edward Antwi - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
+        /* General Styles */
         body {
-            font-family: 'Arvo', serif;
+            font-family: 'Open Sans', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: lightblue;
+            background-color: #e3f2fd;
             color: #333;
-            overflow-x: hidden; /* Prevent horizontal scrolling */
+            overflow-x: hidden;
         }
 
-        /* Geometric Background */
+        /* Navigation Bar */
+        .toolbar {
+            display: flex;
+            justify-content: center;
+            background-color: #212121;
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .toolbar a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            margin: 0 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .toolbar a:hover {
+            background-color: #4CAF50;
+            border-radius: 5px;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 120px 20px;
+            margin-top: 60px;
+            text-align: center;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Welcome Section */
+        #home {
+            background: none;
+        }
+
+        #home h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #1565c0;
+        }
+
+        #home p {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #555;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background-color: #388e3c;
+            transform: translateY(-2px);
+        }
+
+        /* Background Design */
         .background-design {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1; /* Place behind content */
+            z-index: -1;
         }
 
         .circle {
             position: absolute;
             border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.6); /* Soft white color */
+            background-color: rgba(255, 255, 255, 0.4);
         }
 
         .triangle {
             position: absolute;
             width: 0;
             height: 0;
-            border-left: 50px solid transparent;
-            border-right: 50px solid transparent;
-            border-bottom: 80px solid rgba(255, 223, 186, 0.8); /* Pastel yellow */
+            border-left: 60px solid transparent;
+            border-right: 60px solid transparent;
+            border-bottom: 100px solid rgba(255, 223, 186, 0.6);
         }
 
-        /* Toolbar Styling */
-        .toolbar {
-            display: flex;
-            justify-content: space-around;
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .toolbar {
+                flex-wrap: wrap;
+            }
+            .toolbar a {
+                padding: 10px;
+                margin: 5px;
+            }
+            #home h1 {
+                font-size: 3rem;
+            }
+            #home p {
+                font-size: 1.5rem;
+            }
         }
 
-        .toolbar a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-        }
-
-        .toolbar a:hover {
-            background-color: #575757;
-        }
-
-        /* Section Styling */
-        .section {
-            padding: 100px 20px;
-            margin-top: 60px;
-            text-align: center;
-            background-color: rgba(0, 0, 0, 0); /* Fully transparent */
-        }
-
-        /* Welcome Section */
-        h1 {
-            font-size: 4rem;  /* Larger font size */
-            font-weight: 700; /* Bold text */
-            color: #4CAF50;
-        }
-
-        p {
-            font-size: 2rem;  /* Larger font size */
-            font-weight: 700; /* Bold text */
-        }
-
-        button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 1rem;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
     </style>
 </head>
 <body>
 
     <!-- Geometric Background -->
     <div class="background-design">
-        <!-- Circles -->
-        <div class="circle" style="width: 200px; height: 200px; top: 50px; left: 30px;"></div>
-        <div class="circle" style="width: 150px; height: 150px; top: 300px; right: 50px;"></div>
-        <div class="circle" style="width: 100px; height: 100px; bottom: 100px; left: 20px;"></div>
-        <div class="circle" style="width: 300px; height: 300px; bottom: -50px; right: -50px;"></div>
-        <!-- Triangles -->
-        <div class="triangle" style="top: 150px; left: 200px;"></div>
-        <div class="triangle" style="bottom: 200px; right: 150px;"></div>
+        <div class="circle" style="width: 180px; height: 180px; top: 50px; left: 40px;"></div>
+        <div class="circle" style="width: 120px; height: 120px; top: 300px; right: 70px;"></div>
+        <div class="circle" style="width: 80px; height: 80px; bottom: 150px; left: 50px;"></div>
+        <div class="triangle" style="top: 200px; left: 220px;"></div>
     </div>
 
     <!-- Toolbar -->
     <div class="toolbar">
         <a href="#home">Home</a>
         <a href="#about">About</a>
-        <a href="#services">Work Experience</a>
+        <a href="#services">Projects</a>
         <a href="#contact">Contact</a>
     </div>
 
     <!-- Sections -->
     <div id="home" class="section">
         <h1>Edward Antwi</h1>
-        <p>Thank you for your visiting, explore and enjoy the site!</p>
+        <p>Welcome to my portfolio! Explore and enjoy.</p>
         <button onclick="alert('Thank you for visiting!')">Click Me</button>
     </div>
+
     <div id="about" class="section">
         <h1>About Me</h1>
-        <p>My Name is Edward Antwi, I am currently a student of the Clinton School set to graduate in 2027. I am based in New York City and have lived here for the past decade. I hope to pursue a future career in Electrical Engineering or Finance and Economics. My relevant work experience will be listed below</p>
-    </div>
-    <div id="services" class="section">
-        <h1>Projects & Work Experience</h1>
-        <p>The Clinton School Robotics Team, New York, NY                   	      07/2024 - Present
-            Founder and Captain 	
-            Founded robotics team and recruited students interested in STEM to compete in NYC First Tech Challenge Circuit
-            Supervised and lead the development of complex robots over an 8 month period to compete in FIRST Tech Challenge events
-        </p>
-        <p>Sponsors for Educational Opportunity (SEO), New York, NY                                         	  03/2024 - Present
-            Scholar                                                                                                                   	
-            Selected out of more than 1,000 students to participate in a competitive and rigorous eight-year academic program for low-income and/or first-generation students from NYC public schools
-            Currently completing 720+ hours of college-preparatory curriculum in reading, writing, math, advisory, and SAT preparation 
-        </p>
-        <p>UNICEF Club, The Clinton School, New York, NY                          	     02/2024 - Present
-            Volunteer  
-            Contributed to student-led campaigns and fundraising for local and international charities
-        </p>
-        <p>Debate Team, The Clinton School, New York City Urban Debate League, New York, NY	     09/2023 - Present
-            Competitor	
-            Competed in the New York Urban Debate League’s novice bracket, competed in city championships
-        </p> 
-    </div>
-    <div id="contact" class="section">
-        <h1>Contact</h1>
-        <p>Get in touch with us.</p>
-        <p>edwardantwi402@gmail.com</p>
-        <a href="www.linkedin.com/in/edward-antwi-ab6baa321"> Connect with me on Linkedin!</a>
+        <p>I'm Edward Antwi, a student at The Clinton School set to graduate in 2027. I’ve lived in NYC for the past decade and hope to pursue a career in Electrical Engineering or Finance.</p>
     </div>
 
-    <!-- JavaScript -->
+    <div id="services" class="section">
+        <h1>Projects & Work Experience</h1>
+        <p><strong>Clinton School Robotics Team</strong> | Founder & Captain</p>
+        <p>Led a team to develop competition-ready robots for NYC First Tech Challenge.</p>
+
+        <p><strong>SEO Scholars</strong> | Scholar</p>
+        <p>Selected for a competitive program providing 720+ hours of academic prep.</p>
+
+        <p><strong>UNICEF Club</strong> | Volunteer</p>
+        <p>Engaged in fundraising and community campaigns for global causes.</p>
+    </div>
+
+    <div id="contact" class="section">
+        <h1>Contact</h1>
+        <p>Feel free to reach out for collaborations and opportunities.</p>
+    </div>
+
+    <!-- JavaScript for Smooth Scrolling -->
     <script>
-        // Smooth scrolling functionality
         document.querySelectorAll('.toolbar a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -172,7 +194,7 @@
 
                 if (targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 50, // Adjust for toolbar height
+                        top: targetElement.offsetTop - 50,
                         behavior: 'smooth'
                     });
                 }
