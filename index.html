@@ -57,150 +57,38 @@
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        /* Welcome Section */
-        #home {
-            background: none;
+        /* Resume Section */
+        .resume-container {
+            text-align: center;
         }
 
-        #home h1 {
-            font-size: 4rem;
-            font-weight: 700;
-            color: #1565c0;
-        }
-
-        #home p {
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: #555;
-        }
-
-        button {
-            margin-top: 20px;
-            padding: 12px 25px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-        }
-
-        button:hover {
-            background-color: #388e3c;
-            transform: translateY(-2px);
-        }
-
-        /* Background Design */
-        .background-design {
-            position: fixed;
-            top: 0;
-            left: 0;
+        .resume-container iframe {
             width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        .circle {
-            position: absolute;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.4);
-        }
-
-        .triangle {
-            position: absolute;
-            width: 0;
-            height: 0;
-            border-left: 60px solid transparent;
-            border-right: 60px solid transparent;
-            border-bottom: 100px solid rgba(255, 223, 186, 0.6);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .toolbar {
-                flex-wrap: wrap;
-            }
-            .toolbar a {
-                padding: 10px;
-                margin: 5px;
-            }
-            #home h1 {
-                font-size: 3rem;
-            }
-            #home p {
-                font-size: 1.5rem;
-            }
+            height: 600px;
+            border: none;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
         }
 
     </style>
 </head>
 <body>
 
-    <!-- Geometric Background -->
-    <div class="background-design">
-        <div class="circle" style="width: 180px; height: 180px; top: 50px; left: 40px;"></div>
-        <div class="circle" style="width: 120px; height: 120px; top: 300px; right: 70px;"></div>
-        <div class="circle" style="width: 80px; height: 80px; bottom: 150px; left: 50px;"></div>
-        <div class="triangle" style="top: 200px; left: 220px;"></div>
-    </div>
-
     <!-- Toolbar -->
     <div class="toolbar">
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#services">Projects</a>
+        <a href="#resume">Resume</a>
         <a href="#contact">Contact</a>
     </div>
 
-    <!-- Sections -->
-    <div id="home" class="section">
-        <h1>Edward Antwi</h1>
-        <p>Welcome to my portfolio! Explore and enjoy.</p>
-        <button onclick="alert('Thank you for visiting!')">Click Me</button>
+    <!-- Resume Section -->
+    <div id="resume" class="section resume-container">
+        <h1>My Resume</h1>
+        <p>View my resume below or <a href="data:application/pdf;base64,JVBERi0xLjQKJdPr6eEKMSAwIG9iago8PC9UaXRsZSA8RkVGRjAxNTQwMDY1MDA3MzAwNzUwMDZEMDA2NT4KL1Byb2R1Y2VyIChTa2lhL1BERiBtMTMzIEdvb2dsZSBEb2NzIFJlbmRlcmVyKT4+CmVuZG9iagozIDAgb2JqCjw8L2NhIDEKL0JNIC9Ob3JtYWw+PgplbmRvYmoKNCAwIG9iago8PC9DQSAxCi9jYSAxCi9MQyAwCi9MSiAwCi9MVyAxLjMzMzMzMzM3Ci9NTCAxMAovU0EgdHJ1ZQovQk0gL05vcm1hbD4+CmVuZG9iago5IDAgb2JqCjw8L0ZpbHRlciAvRmxhdGVEZWNvZGUKL0xlbmd0aCA2MzE0Pj4gc3RyZWFtCnic7T1bjiM3kv91irqAOYxgBB/AYIHutj3fu+Mb7O4MsJj52Nn7AxuUMqVspUKMUKbUKrvKsLusbCXJ" download="Edward_Antwi_Resume.pdf">download it here</a>.</p>
+        <iframe src="data:application/pdf;base64,JVBERi0xLjQKJdPr6eEKMSAwIG9iago8PC9UaXRsZSA8RkVGRjAxNTQwMDY1MDA3MzAwNzUwMDZEMDA2NT4KL1Byb2R1Y2VyIChTa2lhL1BERiBtMTMzIEdvb2dsZSBEb2NzIFJlbmRlcmVyKT4+CmVuZG9iagozIDAgb2JqCjw8L2NhIDEKL0JNIC9Ob3JtYWw+PgplbmRvYmoKNCAwIG9iago8PC9DQSAxCi9jYSAxCi9MQyAwCi9MSiAwCi9MVyAxLjMzMzMzMzM3Ci9NTCAxMAovU0EgdHJ1ZQovQk0gL05vcm1hbD4+CmVuZG9iago5IDAgb2JqCjw8L0ZpbHRlciAvRmxhdGVEZWNvZGUKL0xlbmd0aCA2MzE0Pj4gc3RyZWFtCnic7T1bjiM3kv91irqAOYxgBB/AYIHutj3fu+Mb7O4MsJj52Nn7AxuUMqVspUKMUKbUKrvKsLusbCXJ"></iframe>
     </div>
-
-    <div id="about" class="section">
-        <h1>About Me</h1>
-        <p>I'm Edward Antwi, a student at The Clinton School set to graduate in 2027. I’ve lived in NYC for the past decade and hope to pursue a career in Electrical Engineering or Finance.</p>
-    </div>
-
-    <div id="services" class="section">
-        <h1>Projects & Work Experience</h1>
-        <p><strong>Clinton School Robotics Team</strong> | Founder & Captain</p>
-        <p>Led a team to develop competition-ready robots for NYC First Tech Challenge.</p>
-
-        <p><strong>SEO Scholars</strong> | Scholar</p>
-        <p>Selected for a competitive program providing 720+ hours of academic prep.</p>
-
-        <p><strong>UNICEF Club</strong> | Volunteer</p>
-        <p>Engaged in fundraising and community campaigns for global causes.</p>
-    </div>
-
-    <div id="contact" class="section">
-        <h1>Contact</h1>
-        <p>Feel free to reach out for collaborations and opportunities.</p>
-    </div>
-
-    <!-- JavaScript for Smooth Scrolling -->
-    <script>
-        document.querySelectorAll('.toolbar a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 50,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
 
 </body>
 </html>
