@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edward Antwi - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
         /* General Styles */
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'IBM Plex Sans', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #e3f2fd;
+            background-color: #f4f4f4;
             color: #333;
             overflow-x: hidden;
         }
@@ -20,74 +20,97 @@
         .toolbar {
             display: flex;
             justify-content: center;
-            background-color: #212121;
+            background-color: rgba(33, 33, 33, 0.95);
             color: white;
             padding: 15px 0;
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .toolbar a {
             color: white;
             text-decoration: none;
-            padding: 12px 20px;
-            margin: 0 10px;
+            padding: 14px 20px;
+            margin: 0 15px;
             font-weight: 600;
             transition: all 0.3s ease;
         }
 
         .toolbar a:hover {
-            background-color: #4CAF50;
+            background-color: #0077b6;
             border-radius: 5px;
         }
 
         /* Section Styling */
         .section {
-            padding: 120px 20px;
-            margin-top: 60px;
-            text-align: center;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-            background: rgba(255, 255, 255, 0.9);
+            padding: 100px 20px;
+            margin: 60px auto;
+            max-width: 1000px;
+            background: white;
             border-radius: 10px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
         }
 
         /* Welcome Section */
+        #home {
+            text-align: center;
+        }
+
         #home h1 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 4rem;
-            font-weight: 700;
-            color: #1565c0;
+            font-size: 3.5rem;
+            font-weight: 600;
+            color: #0077b6;
         }
 
         #home p {
-            font-size: 1.8rem;
-            font-weight: 600;
+            font-size: 1.5rem;
+            font-weight: 400;
             color: #555;
         }
 
         button {
             margin-top: 20px;
-            padding: 12px 25px;
-            font-size: 1.2rem;
+            padding: 14px 28px;
+            font-size: 1rem;
             font-weight: 600;
-            background-color: #4CAF50;
+            background-color: #0077b6;
             color: white;
             border: none;
-            border-radius: 8px;
+            border-radius: 6px;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         button:hover {
-            background-color: #388e3c;
+            background-color: #005a8d;
             transform: translateY(-2px);
+        }
+
+        /* Contact Section */
+        #contact {
+            text-align: center;
+        }
+
+        .contact-links a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            color: #0077b6;
+            font-weight: 600;
+            text-decoration: none;
+            border: 2px solid #0077b6;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-links a:hover {
+            background-color: #0077b6;
+            color: white;
         }
 
         /* Responsive Design */
@@ -100,10 +123,10 @@
                 margin: 5px;
             }
             #home h1 {
-                font-size: 3rem;
+                font-size: 2.8rem;
             }
             #home p {
-                font-size: 1.5rem;
+                font-size: 1.3rem;
             }
         }
 
@@ -122,13 +145,13 @@
     <!-- Sections -->
     <div id="home" class="section">
         <h1>Edward Antwi</h1>
-        <p>Welcome to my portfolio! Explore and enjoy.</p>
-        <button onclick="alert('Thank you for visiting!')">Click Me</button>
+        <p>Welcome to my professional portfolio. Explore my projects and experience.</p>
+        <button onclick="alert('Thank you for visiting!')">Learn More</button>
     </div>
 
     <div id="about" class="section">
         <h1>About Me</h1>
-        <p>I'm Edward Antwi, a student at The Clinton School set to graduate in 2027. I’ve lived in NYC for the past decade and hope to pursue a career in Electrical Engineering or Finance.</p>
+        <p>I'm Edward Antwi, a student at The Clinton School, set to graduate in 2027. Based in New York City, I have a strong passion for Electrical Engineering, Finance, and Technology.</p>
     </div>
 
     <div id="services" class="section">
@@ -137,7 +160,7 @@
         <p>Led a team to develop competition-ready robots for NYC First Tech Challenge.</p>
 
         <p><strong>SEO Scholars</strong> | Scholar</p>
-        <p>Selected for a competitive program providing 720+ hours of academic prep.</p>
+        <p>Selected for a rigorous academic program providing 720+ hours of college prep.</p>
 
         <p><strong>UNICEF Club</strong> | Volunteer</p>
         <p>Engaged in fundraising and community campaigns for global causes.</p>
@@ -145,9 +168,11 @@
 
     <div id="contact" class="section">
         <h1>Contact</h1>
-        <p>Feel free to reach out for collaborations and opportunities.</p>
-        <p>Email me at edwardantwi402@gmail.com</p>
-        <a href="www.linkedin.com/in/edward-antwi-ab6baa321">Contact me on Linkedin!</a>
+        <p>Connect with me for potential collaborations and opportunities.</p>
+        <div class="contact-links">
+            <a href="mailto:edwardantwi402@gmail.com">Email Me</a>
+            <a href="https://www.linkedin.com/in/edward-antwi-ab6baa321" target="_blank">LinkedIn</a>
+        </div>
     </div>
 
     <!-- JavaScript for Smooth Scrolling -->
