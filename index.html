@@ -29,6 +29,7 @@
             height: 100%;
             z-index: -1;
             background: linear-gradient(to bottom right, #e0eafc, #cfdef3);
+            transition: background 0.3s ease-in-out;
         }
 
         /* Navigation Bar */
@@ -246,6 +247,13 @@
                     });
                 }
             });
+        });
+
+        // Function to change background color hue on scroll
+        window.addEventListener('scroll', function () {
+            const scrollPosition = window.scrollY;
+            const hue = (scrollPosition % 360); // Limit hue to 360
+            document.querySelector('.background-design').style.background = `linear-gradient(to bottom right, hsl(${hue}, 80%, 80%), hsl(${(hue + 180) % 360}, 80%, 80%))`;
         });
     </script>
 
