@@ -17,7 +17,7 @@
             background-color: #f4f4f4;
             color: #333;
             overflow-x: hidden;
-            line-height: 1.6;
+            line-height: 1.8;
         }
 
         /* Background Design */
@@ -29,7 +29,7 @@
             height: 100%;
             z-index: -1;
             background: linear-gradient(to bottom right, #e0eafc, #cfdef3);
-            transition: background 5s ease-in-out; /* Slower transition */
+            transition: background 2s ease-in-out; /* Slowed down transition */
         }
 
         /* Navigation Bar */
@@ -38,7 +38,7 @@
             justify-content: center;
             background-color: rgba(33, 33, 33, 0.95);
             color: white;
-            padding: 20px 0;
+            padding: 30px 0;
             position: fixed;
             top: 0;
             width: 100%;
@@ -49,9 +49,10 @@
         .toolbar a {
             color: white;
             text-decoration: none;
-            padding: 14px 20px;
-            margin: 0 15px;
-            font-weight: 600;
+            padding: 20px 30px;
+            margin: 0 25px;
+            font-weight: 700;
+            font-size: 1.5rem;
             transition: all 0.3s ease;
         }
 
@@ -62,8 +63,8 @@
 
         /* Section Styling */
         .section {
-            padding: 120px 20px;
-            margin: 80px auto;
+            padding: 200px 30px;
+            margin: 120px auto;
             max-width: 900px;
             background: white;
             border-radius: 10px;
@@ -77,21 +78,21 @@
         }
 
         #home h1 {
-            font-size: 3.5rem;
+            font-size: 5rem;
             font-weight: 700;
             color: #0077b6;
-            margin-bottom: 20px;
-        }
-
-        #home p {
-            font-size: 1.5rem;
-            color: #555;
             margin-bottom: 30px;
         }
 
+        #home p {
+            font-size: 2rem;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
         button {
-            padding: 16px 32px;
-            font-size: 1.1rem;
+            padding: 20px 40px;
+            font-size: 1.5rem;
             font-weight: 600;
             background-color: #0077b6;
             color: white;
@@ -109,16 +110,20 @@
 
         /* About Section */
         #about p {
-            font-size: 1.1rem;
+            font-size: 1.5rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
         }
 
         /* Projects Section */
         #services p {
-            margin-bottom: 15px;
+            margin-bottom: 25px;
+            font-size: 1.3rem;
         }
 
         #services strong {
             font-weight: 700;
+            font-size: 1.5rem;
         }
 
         /* Contact Section */
@@ -128,10 +133,11 @@
 
         .contact-links a {
             display: inline-block;
-            margin: 10px;
-            padding: 12px 24px;
+            margin: 20px;
+            padding: 20px 35px;
             color: #0077b6;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 1.5rem;
             text-decoration: none;
             border: 2px solid #0077b6;
             border-radius: 8px;
@@ -150,32 +156,33 @@
             }
 
             .toolbar a {
-                padding: 12px;
-                margin: 5px;
+                padding: 15px;
+                margin: 10px;
+                font-size: 1.2rem;
             }
 
             #home h1 {
-                font-size: 2.8rem;
+                font-size: 4rem;
             }
 
             #home p {
-                font-size: 1.3rem;
+                font-size: 1.6rem;
             }
 
             .section {
-                padding: 80px 20px;
-                margin: 40px auto;
+                padding: 160px 20px;
+                margin: 80px auto;
             }
         }
 
         .fade-in {
-        opacity: 0;
-        transition: opacity 0.5s ease-in-out;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
         }
 
-    .fade-in.active {
-    opacity: 1;
-    }
+        .fade-in.active {
+            opacity: 1;
+        }
     </style>
 </head>
 
@@ -206,10 +213,10 @@
     <div id="services" class="section">
         <h1>Projects & Work Experience</h1>
         <p><strong>Clinton School Robotics Team</strong> | Founder & Captain</p>
-        <p> 07/2024 - Present
+        <p>07/2024 - Present
             Founded robotics team and recruited students interested in STEM to compete in NYC First Tech Challenge
             Circuit
-            Supervised and lead the development of complex robots over an 8 month period to compete in FIRST Tech
+            Supervised and lead the development of complex robots over an 8-month period to compete in FIRST Tech
             Challenge events
         </p>
 
@@ -250,10 +257,24 @@
         });
 
         // Function to change background color hue on scroll
+        let isColorChangeEnabled = true;
+
         window.addEventListener('scroll', function () {
             const scrollPosition = window.scrollY;
             const hue = (scrollPosition % 360); // Limit hue to 360
-            document.querySelector('.background-design').style.background = `linear-gradient(to bottom right, hsl(${hue}, 80%, 80%), hsl(${(hue + 180) % 360}, 80%, 80%))`;
+
+            // Slow down the color transition
+            document.querySelector('.background-design').style.transition = 'background 2s ease-in-out';
+
+            // Stop the color change after scrolling 1500px
+            if (scrollPosition > 1500 && isColorChangeEnabled) {
+                isColorChangeEnabled = false;
+                document.querySelector('.background-design').style.transition = 'none'; // Disable further color transition
+            }
+
+            if (isColorChangeEnabled) {
+                document.querySelector('.background-design').style.background = `linear-gradient(to bottom right, hsl(${hue}, 80%, 80%), hsl(${(hue + 180) % 360}, 80%, 80%))`;
+            }
         });
     </script>
 
