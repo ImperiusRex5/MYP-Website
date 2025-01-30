@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edward Antwi - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
     <style>
         /* General Styles */
         body {
-            font-family: 'IBM Plex Sans', sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
         /* Background Design */
@@ -24,21 +28,7 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-        }
-
-        .circle {
-            position: absolute;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.4);
-        }
-
-        .triangle {
-            position: absolute;
-            width: 0;
-            height: 0;
-            border-left: 60px solid transparent;
-            border-right: 60px solid transparent;
-            border-bottom: 100px solid rgba(255, 223, 186, 0.6);
+            background: linear-gradient(to bottom right, #e0eafc, #cfdef3);
         }
 
         /* Navigation Bar */
@@ -47,7 +37,7 @@
             justify-content: center;
             background-color: rgba(33, 33, 33, 0.95);
             color: white;
-            padding: 15px 0;
+            padding: 20px 0;
             position: fixed;
             top: 0;
             width: 100%;
@@ -71,9 +61,9 @@
 
         /* Section Styling */
         .section {
-            padding: 100px 20px;
-            margin: 60px auto;
-            max-width: 1000px;
+            padding: 120px 20px;
+            margin: 80px auto;
+            max-width: 900px;
             background: white;
             border-radius: 10px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -87,25 +77,25 @@
 
         #home h1 {
             font-size: 3.5rem;
-            font-weight: 600;
+            font-weight: 700;
             color: #0077b6;
+            margin-bottom: 20px;
         }
 
         #home p {
             font-size: 1.5rem;
-            font-weight: 400;
             color: #555;
+            margin-bottom: 30px;
         }
 
         button {
-            margin-top: 20px;
-            padding: 14px 28px;
-            font-size: 1rem;
+            padding: 16px 32px;
+            font-size: 1.1rem;
             font-weight: 600;
             background-color: #0077b6;
             color: white;
             border: none;
-            border-radius: 6px;
+            border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -116,6 +106,20 @@
             transform: translateY(-2px);
         }
 
+        /* About Section */
+        #about p {
+            font-size: 1.1rem;
+        }
+
+        /* Projects Section */
+        #services p {
+            margin-bottom: 15px;
+        }
+
+        #services strong {
+            font-weight: 700;
+        }
+
         /* Contact Section */
         #contact {
             text-align: center;
@@ -124,12 +128,12 @@
         .contact-links a {
             display: inline-block;
             margin: 10px;
-            padding: 10px 20px;
+            padding: 12px 24px;
             color: #0077b6;
             font-weight: 600;
             text-decoration: none;
             border: 2px solid #0077b6;
-            border-radius: 6px;
+            border-radius: 8px;
             transition: all 0.3s ease;
         }
 
@@ -143,31 +147,33 @@
             .toolbar {
                 flex-wrap: wrap;
             }
+
             .toolbar a {
-                padding: 10px;
+                padding: 12px;
                 margin: 5px;
             }
+
             #home h1 {
                 font-size: 2.8rem;
             }
+
             #home p {
                 font-size: 1.3rem;
             }
-        }
 
+            .section {
+                padding: 80px 20px;
+                margin: 40px auto;
+            }
+        }
     </style>
 </head>
+
 <body>
 
-    <!-- Geometric Background -->
     <div class="background-design">
-        <div class="circle" style="width: 180px; height: 180px; top: 50px; left: 40px;"></div>
-        <div class="circle" style="width: 120px; height: 120px; top: 300px; right: 70px;"></div>
-        <div class="circle" style="width: 80px; height: 80px; bottom: 150px; left: 50px;"></div>
-        <div class="triangle" style="top: 200px; left: 220px;"></div>
     </div>
 
-    <!-- Toolbar -->
     <div class="toolbar">
         <a href="#home">Home</a>
         <a href="#about">About</a>
@@ -175,7 +181,6 @@
         <a href="#contact">Contact</a>
     </div>
 
-    <!-- Sections -->
     <div id="home" class="section">
         <h1>Edward Antwi</h1>
         <p>Welcome to my professional portfolio. Explore my projects and experience.</p>
@@ -184,16 +189,26 @@
 
     <div id="about" class="section">
         <h1>About Me</h1>
-        <p>I'm Edward Antwi, a student at The Clinton School, set to graduate in 2027. Based in New York City, I have a strong passion for Electrical Engineering, Finance, and Technology.</p>
+        <p>I'm Edward Antwi, a student at The Clinton School, set to graduate in 2027. Based in New York City, I have a
+            strong passion for Electrical Engineering, Finance, and Technology.</p>
     </div>
 
     <div id="services" class="section">
         <h1>Projects & Work Experience</h1>
         <p><strong>Clinton School Robotics Team</strong> | Founder & Captain</p>
-        <p>Led a team to develop competition-ready robots for NYC First Tech Challenge.</p>
+        <p> 07/2024 - Present
+            Founded robotics team and recruited students interested in STEM to compete in NYC First Tech Challenge
+            Circuit
+            Supervised and lead the development of complex robots over an 8 month period to compete in FIRST Tech
+            Challenge events
+        </p>
 
         <p><strong>SEO Scholars</strong> | Scholar</p>
-        <p>Selected for a rigorous academic program providing 720+ hours of college prep.</p>
+        <p>Selected out of more than 1,000 students to participate in a competitive and rigorous eight-year academic
+            program for low-income and/or first-generation students from NYC public schools
+            Currently completing 720+ hours of college-preparatory curriculum in reading, writing, math, advisory, and
+            SAT preparation
+        </p>
 
         <p><strong>UNICEF Club</strong> | Volunteer</p>
         <p>Engaged in fundraising and community campaigns for global causes.</p>
@@ -208,10 +223,9 @@
         </div>
     </div>
 
-    <!-- JavaScript for Smooth Scrolling -->
     <script>
         document.querySelectorAll('.toolbar a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href').substring(1);
                 const targetElement = document.getElementById(targetId);
@@ -227,4 +241,5 @@
     </script>
 
 </body>
+
 </html>
